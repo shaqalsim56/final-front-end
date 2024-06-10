@@ -1,0 +1,40 @@
+<app-user-header></app-user-header>
+<div class="featured-title">
+    <h1>View <span>Bookings</span></h1>
+</div>
+
+<div *ngIf="!hasData" class="error-message">
+    No Bookings Found 
+</div>
+
+<div *ngIf="hasData">
+<div *ngFor="let detail of details  | paginate: { itemsPerPage: itemsPerPage, currentPage: p}" class="details-area">
+
+        <div class="info-section">
+            <p><b>Rent Date:</b> {{detail['rent_date'] | date}}</p>
+            <p><b>Return Date:</b> {{detail['return_date'] | date}}</p>
+            <p><b>Order ID #:</b> {{detail['id']}}</p>
+            <p><b>Total Price: </b>{{detail['total_price'] | currency}}</p>
+            <p><b>Vehicle ID:</b> {{detail['vehicle_id']}}</p>
+        </div>
+
+        <div class="image-section">
+            <img src="assets/uploads/{{detail['img']}}" alt="">
+            <h4>{{detail['vehicle_make']}} {{detail['vehicle_model']}}</h4>
+            <div style="display: flex; justify-content: space-between;">
+                <button class="btn btn-outline-danger"(click)="deleteBooking(detail)">Cancel Booking</button>
+                <a routerLink="/user-update-booking/{{detail['id']}}" class="btn btn-outline-info">Update Booking</a>
+            </div>
+        </div>
+
+</div>
+<div class="pagination">
+    <pagination-controls (pageChange)="p = $event"></pagination-controls>
+</div>
+
+</div>
+<div style="background-color: #E9F6FB; padding: 20px;">
+    <a routerLink="/account-purchases"a class="btn-purchase">View Purchases</a>
+</div>
+
+<app-footer></app-footer>

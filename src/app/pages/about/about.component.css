@@ -1,0 +1,25 @@
+main{
+    background-color: #E9F6FB;
+    padding-bottom: 15px;
+}
+
+.featured-title{
+    font-size: 60px;
+    font-weight: bold;
+    background-color: #E9F6FB;
+}
+
+.featured-title h1{
+    font-size: 50px;
+    font-weight: bold;
+}
+
+.featured-title h2{
+    font-size: 40px;
+    font-weight: 500;
+}
+
+
+span{
+    color: #006787;
+}

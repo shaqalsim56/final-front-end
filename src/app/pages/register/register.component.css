@@ -1,0 +1,102 @@
+.container{
+    /* border: 2px solid green; */
+    display: flex;
+    background-color: #fff;
+}
+.login-section {
+    /* border: 2px solid red; */
+    background-color: #fff;
+    background-image: url('../../../assets/login-section.svg');
+    background-size: contain;
+    background-position: left;
+    background-repeat: no-repeat;
+    width: 120%;
+    height: 900px;
+}
+.form-class {
+    /* border: 2px solid violet; */
+    width: 60%;
+    margin: auto;
+    margin-top: 130px;
+    text-align: center;
+}
+.form-class a{
+    text-decoration: none;
+}
+.form-class input{
+    width: 90%;
+    margin-top: 15px;
+    padding: 5px;
+    font-family: "Poppins", sans-serif;
+}
+.form-class p{
+    font-family: "Poppins", sans-serif;
+    color: #fff;
+}
+.btn-login{
+    margin-top: 15px;
+    margin-bottom: 15px;
+    font-family: "Lexend Zetta", sans-serif;
+    padding: 15px;
+    background-color: #FFB612;
+    width: 93%;
+    cursor: pointer;
+    transition: 0.5s all;
+    border: none;
+}
+.btn-login:hover{
+    background-color: #b48006;
+    color: #F7F7F9;
+}
+.btn-register{
+    margin-top: 15px;
+    margin-bottom: 15px;
+    font-family: "Lexend Zetta", sans-serif;
+    background-color: #F7F7F9;
+    padding: 15px;
+    width: 90%;
+    cursor: pointer;
+    transition: 0.5s all;
+    border: none;
+}
+
+.btn-register:hover{
+    background-color: #8c8c8d;
+    color: #fff;
+}
+
+.mid-section{
+    display: flex;
+    width: 92%;
+    margin: auto;
+}
+
+
+.title-section{
+    display: flex;
+    /* border: 2px solid white; */
+    font-family: "Poppins", sans-serif;
+    justify-content: space-between;
+    width: 93%;
+    margin: auto;;
+}
+
+.title-section h1{
+color: #F7F7F9;
+font-size: 40px;
+}
+
+
+
+.admin-section a{
+    text-decoration: none;
+    color: #F7F7F9;
+    font-family: "Poppins", sans-serif;
+}
+
+.error-message{
+    background-color: #C60C30;
+    font-family: "Poppins", sans-serif;
+    color: #fff;
+    border-radius: 20px;
+}

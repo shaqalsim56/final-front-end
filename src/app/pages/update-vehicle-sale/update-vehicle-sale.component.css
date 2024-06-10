@@ -1,0 +1,102 @@
+.formClass{
+    margin: auto;
+    text-align: center;
+    background-color: #E9F6FB;
+    transition: all;
+    padding-bottom: 15px;
+}
+
+.featured-title{
+    text-align: center;
+    font-size: 60px;
+    font-weight: bold;
+    background-color: #E9F6FB;
+    padding: 20px;
+}
+
+.featured-title h1{
+    font-size: 50px;
+    font-weight: bold;
+}
+
+
+span{
+    color: #006787;
+}
+
+.formClass input, .formClass textarea{
+    width: 45%;
+    padding: 5px;
+    border-radius: 20px;
+    border: 2px solid #000;
+    text-align: center;
+}
+
+.formClass select{
+    margin-top: 15px;
+    padding: 2px;
+    text-align: center;
+    width: 30%;
+}
+
+#descr{
+    padding: 30px;
+}
+
+.form-group {
+    margin-bottom: 5px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: bold;
+}
+
+
+.image-container{
+    text-align: center;
+    background-color: #E9F6FB;
+}
+
+.btn-update{
+    margin: auto;
+    text-align: center;
+    margin-top: 15px;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+    border-radius: 20px;
+    background-color: #006787;
+    color: #E9F6FB;
+    width: 20%;
+    border: none;
+    transition: all 0.5s;
+}
+
+.btn-update:hover{
+    background-color: #FFB612;
+    color: #000;
+}
+
+.btn-return{
+    margin: auto;
+    text-align: center;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+    border-radius: 20px;
+    background-color: #101820;
+    color: #FFB612;
+    width: 20%;
+    border: none;
+    transition: all 0.5s;
+    text-decoration: none;
+}
+
+.btn-return a{
+    text-decoration: none;
+}

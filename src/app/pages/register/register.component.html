@@ -1,0 +1,49 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lexend+Zetta:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+<div class="container">
+    <div class="login-section">
+
+        <form (ngSubmit)="createUser(registerForm)" #registerForm="ngForm"  class="form-class">
+
+            <div class="title-section">
+                <img src="assets/steel-ride-logo.png" alt="" width="30%">
+                <h1>REGISTER</h1>
+            </div>
+
+            <p>Please create your account.</p>
+
+            <input type="text" placeholder="Enter Your First Name" id="first_nm" name="first_nm" ngModel>
+
+            <input type="text" placeholder="Enter Your Last Name" id="last_nm" name="last_nm" ngModel>
+
+            <input type="text" placeholder="Enter Your Email Address" id="email" name="email" ngModel>
+
+            <input type="password" placeholder="Enter Your Password" name="password" ngModel>
+
+            <button type="submit" class="btn-login">CREATE ACCOUNT</button>
+
+            <div class="admin-section">
+                <a routerLink="/login" class="admin-link">Return To Login</a>
+            </div>
+           
+
+            <div class="error-message">
+                <p *ngIf="hasError" style="padding: 5px;">{{errorMessage}}</p>
+            </div>
+        </form>
+    </div>
+    <div class="img-section">
+<img src="assets/bmw.png" alt="" width="100%">
+    </div>
+</div>
+
+
+
+
+
+
+
+
+

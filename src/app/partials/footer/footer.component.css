@@ -1,0 +1,83 @@
+footer{
+background-color: #E9F6FB;
+padding-top: 50px;
+color: #fff;
+}
+
+.info-section{
+    background-color: #006787;
+    padding: 20px;
+    text-align: center;
+}
+
+
+footer img {
+    max-width: 100%;
+    height: auto;
+}
+
+footer .contact-info,
+footer .hours-operation,
+footer .quick-links,
+footer .social-media,
+footer .payment-methods,
+footer .legal,
+footer .copyright {
+    margin-bottom: 20px;
+}
+
+footer p, footer a, footer li {
+    margin: 5px 0;
+}
+
+footer a {
+    color: #00aaff;
+    text-decoration: none;
+}
+
+
+footer ul {
+    list-style: none;
+    padding: 0;
+}
+
+footer ul li {
+    display: inline-block;
+    margin: 0 10px;
+}
+
+footer .contact-info p,
+footer .hours-operation p,
+footer .quick-links p,
+footer .social-media p,
+footer .payment-methods p,
+footer .legal ul,
+footer .copyright p {
+    margin: 5px 0;
+}
+
+footer .quick-links ul li,
+footer .social-media ul li,
+footer .payment-methods ul li,
+footer .legal ul li {
+    display: block;
+    margin: 5px 0;
+}
+
+@media (min-width: 768px) {
+    footer .info-section {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+    
+    footer .info-section > div {
+        flex: 1;
+        min-width: 200px;
+    }
+    
+    footer .info-section img {
+        flex: 1 1 10%;
+    }
+}

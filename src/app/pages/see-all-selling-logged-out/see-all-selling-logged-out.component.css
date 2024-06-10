@@ -1,0 +1,121 @@
+body{
+    background-color: #E9F6FB;
+}
+
+.card{
+    border: 3px solid #000;
+    width: 92%;
+    padding: 10px;
+    text-align: center;
+    border-radius: 20px;
+}
+
+#vehicle{
+    height: 250px;
+    width: 420px;
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+}
+
+.featured-title{
+    text-align: center;
+    font-size: 60px;
+    font-weight: bold;
+}
+
+span{
+    color: #006787;
+}
+
+
+.card-section{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, auto);
+    gap: 15px;
+    text-align: center;
+}
+
+
+.info-section{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#icon img{
+    width: 30px;
+    height: 30px;
+}
+
+.sub-section{
+    align-items: center;
+}
+
+.btn-view{
+    margin: auto;
+    text-align: center;
+    margin-top: 15px;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+    border-radius: 20px;
+    background-color: #006787;
+    color: #E9F6FB;
+    width: 20%;
+    border: none;
+    transition: all 0.5s;
+    text-decoration: none;
+}
+
+.btn-view:hover{
+    background-color: #FFB612;
+    color: #000;
+}
+
+
+
+.btn-rent{
+    text-align: center;
+    background-color: #91D0E8;
+    color: #E9F6FB;
+    padding: 7px;
+    text-decoration: none;
+    border-radius: 20px;
+    transition: all 0.5s;
+    font-size: 12px;
+}
+
+.btn-rent:hover{
+    background-color: #FFB612;
+    color: #000;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    padding: 15px;
+  }
+  
+  .search-bar-section{
+    padding: 10px;
+    text-align: center;
+    background-color: #E9F6FB;
+  }
+
+  .search-bar-section input{
+    width: 70%;
+    padding: 5px;
+    border-radius: 20px;
+    text-align: center;
+    border: 2px solid #000;
+  }
+
+  .error-message{
+    text-align: center;
+    font-size: 40px;
+    padding: 250px;
+  }
+  

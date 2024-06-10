@@ -1,0 +1,16 @@
+<app-admin-header></app-admin-header>
+<div class="featured-title">
+    <h1>View <span>User</span></h1>
+</div>
+
+<div style="background-color: #E9F6FB; padding: 60px;">
+<div *ngIf="hasData" class="user-container">
+            <h1>Name of User: {{user['first_nm']}} {{user['last_nm']}}</h1>
+            <p> Email of User: {{user['email']}}</p>
+            <p>Access Level of User:  {{user['level']}} </p>
+            <p>User's Last Login: {{user['last_logged_in'] | date: 'MMM d, y, h:mm a'}}</p>
+            <p>Status of User: {{user['status']}}</p>
+</div>
+
+<a routerLink="/all-users" class="btn-return">Return To Users</a>
+</div>

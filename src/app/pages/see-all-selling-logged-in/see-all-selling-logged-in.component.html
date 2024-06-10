@@ -1,0 +1,54 @@
+<app-user-header></app-user-header>
+
+<div class="search-bar-section">
+    <input type="search" placeholder="Search Vehicle's Make, Model, Fuel Type or Price" [(ngModel)]="searchtext" (input)="onSearchTextChange()">
+    <h1 class="featured-title">Purchase<span> Vehicle</span></h1>
+</div>
+
+<body>
+    <div *ngIf="noResultsFound" class="error-message">
+        No vehicles found matching your search criteria.
+    </div>
+
+    <div class="card-section" *ngIf="hasData && !noResultsFound">
+        <div class="card" *ngFor="let vehicle of filteredVehicles  | filter: searchtext  | paginate: { itemsPerPage: itemsPerPage, currentPage: p}">
+            <img src="assets/uploads/{{vehicle['img']}}" alt="" id="vehicle">
+            <h3>{{vehicle['vehicle_make']}} {{vehicle['vehicle_model']}}</h3>
+                    {{vehicle['vehicle_m']}}
+            <div class="info-section" id="icon">
+                <div>
+                    <img src="assets/car_seat_icon_177219.svg" alt=""> {{vehicle['seat_num']}}
+                </div>
+
+                <div id="icon">
+                    <img src="assets/car_door_icon_138811.png" alt=""> {{vehicle['door']}}
+                </div>
+             
+          
+                <div id="icon">
+                    <img src="assets/fuelservice_89144.png" alt=""> {{vehicle['fuel_type']}}
+                </div>
+
+            </div>
+            <div>
+                <h5>{{vehicle['year']}}</h5>
+            </div>
+
+            <div class="info-section" id="icon">
+                <div>
+                    <h3>JMD {{vehicle['price'] | currency}}</h3>
+                </div>
+
+                <a routerLink="/view-selling-logged-in/{{vehicle['id']}}" class="btn-rent">Purchase</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="pagination" *ngIf="!noResultsFound">
+        <pagination-controls (pageChange)="p = $event"></pagination-controls>
+    </div>
+</body>
+
+<app-footer></app-footer>
+
+

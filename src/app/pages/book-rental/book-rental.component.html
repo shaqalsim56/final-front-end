@@ -1,0 +1,40 @@
+<app-user-header></app-user-header>
+<body>
+    <div class="featured-title">
+        <h1>Complete <span> Booking</span></h1>
+    </div>
+
+    <form (ngSubmit)="createBooking(bookingForm)" class="confirmation" #bookingForm="ngForm">
+        <img src="assets/uploads/{{vehicle['img']}}" alt="">
+
+        <h1>{{vehicle['year']}} {{vehicle['vehicle_make']}} {{vehicle['vehicle_model']}}</h1>
+
+        <h3>{{vehicle['price'] | currency}} Per Day</h3>
+
+        <p>{{vehicle['descr']}}</p>
+        
+        <input type="text" name="user_id" [ngModel]="currentUser?.id" hidden>
+
+        <input type="text" name="vehicle_id"  [ngModel]="vehicle?.id" hidden>
+
+        <div class="form-group">
+            <label for="rent_date">Date of Rental</label>
+            <input type="date" name="rent_date" id=start required (change)="onStartChange($event)" #startInput ngModel >
+        </div>
+
+        <div class="form-group">
+            <label for="return_date">Return Date</label>
+            <input type="date" name="return_date" id=end required (change)="onEndChange($event)" #endInput ngModel>
+        </div>
+
+
+        <input type="text" name="price"  [ngModel]="vehicle?.price" hidden>
+
+        <button type="submit" class="btn-book">Make Booking</button>
+    </form>
+    <div style="background-color: #E9F6FB; padding: 15px;">
+        <button onclick="history.back()" class="btn-return">Back</button>
+    </div>
+    
+</body>
+<app-footer></app-footer>

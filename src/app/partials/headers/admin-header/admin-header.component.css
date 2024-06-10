@@ -1,0 +1,24 @@
+.user-section{
+    /* border: 2px solid orange; */
+    display: flex;
+   justify-content: space-between;
+   width: 25%;
+   align-items: center;
+}
+
+.user-section {
+    font-size: 20px;
+}
+
+.header{
+    background-color: #006787;
+    color: #fff;
+    padding: 10px;
+    font-family: "Poppins", sans-serif;
+    display: flex;
+    justify-content: space-between;
+}
+
+.header img{
+    cursor: pointer;
+}

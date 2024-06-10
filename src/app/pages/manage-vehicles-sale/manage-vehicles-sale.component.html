@@ -1,0 +1,96 @@
+<app-admin-header></app-admin-header>
+<div class="featured-title">
+    <h1>Manage <span>Vehicles For Sale</span></h1>
+</div>
+<div *ngIf="!hasData" class="error-section">
+    No Vehicles Are In The Database
+</div>
+<div *ngIf="hasData" style="background-color: #E9F6FB;">
+<table>
+    <tr class="table-title">
+        <td>ID</td>
+        <td>Vehicle</td>
+        <td>Number of Seat</td>
+        <td>Year</td>
+        <td>Number of Doors</td>
+        <td>Fuel Type</td>
+        <td>Status</td>
+        <td>Price</td>
+        <td>Actions</td>
+    </tr>
+    <tr *ngFor="let vehicle of vehicles | paginate: { itemsPerPage: itemsPerPage, currentPage: p}">
+    <td>{{vehicle['id']}} </td>
+    <td>{{vehicle['vehicle_make']}} {{vehicle['vehicle_model']}}</td>
+    <td>{{vehicle['seat_num']}} </td>
+    <td>{{vehicle['year']}} </td>
+    <td>{{vehicle['door']}} </td>
+    <td>{{vehicle['fuel_type']}} </td>
+    <td>{{vehicle['status']}} </td>
+    <td>{{vehicle['price'] | currency}} </td>
+    <td class="actions">
+        <a routerLink="/view-vehicle-sale/{{vehicle['id']}}" class="btn btn-outline-info">View Vehicle</a>
+        <a routerLink="/update-vehicle-sale/{{vehicle['id']}}" class="btn btn-outline-info">Update Vehicle</a>
+        <a routerLink="/delete-vehicle-sale/{{vehicle['id']}}" class="btn btn-outline-info">Delete Vehicle</a>
+    </td>
+    </tr>
+</table>
+<div class="pagination">
+    <pagination-controls (pageChange)="p = $event"></pagination-controls>
+</div>
+</div>
+<div style="background-color: #E9F6FB; padding: 40px;">
+    <button (click)="toggleForm()" class="btn-new">Add New Vehicle For Sale</button>
+    <a routerLink="/admin-dashboard" class="btn-return">Return To Dashboard</a>
+</div>
+<form #createFormElement (ngSubmit)="createSale(saleForm)" #saleForm="ngForm" class="formClass" *ngIf="showForm">
+    <div class="featured-title">
+        <h1>New <span>Vehicles For Sale</span></h1>
+    </div>
+    <input type="text" name="vehicle_model" placeholder="Enter The Vehicle's Model" ngModel required><br>
+    <input type="text" name="vehicle_make" placeholder="Enter The Vehicle's Make" ngModel required><br>
+    <select name="seat_num" ngModel required>
+        <option value="">Select Number of Seats</option>
+        <option value="2">2</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+    </select><br>
+    <select name="year" ngModel required>
+        <option value="">Select The Vehicle's Manufacture Year</option>
+        <option *ngFor="let year of years" [value]="year">{{ year }}</option>
+    </select><br>
+    <select name="door" ngModel required>
+        <option value="">Select Number of Doors</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+    </select><br>
+    <select name="fuel_type" ngModel required>
+        <option value="">Select Fuel Type</option>
+        <option value="Petrol">Petrol</option>
+        <option value="Diesel">Diesel</option>
+        <option value="Electric">Electric</option>
+        <option value="Hybrid">Hybrid</option>
+        <option value="CNG">CNG</option>
+        <option value="Petrol/Diesel/Electric">Petrol/Diesel/Electric</option>
+        <option value="Petrol/Diesel">Petrol/Diesel</option>
+        <option value="Petrol/Electric">Petrol/Electric</option>
+    </select><br>
+
+    <input type="number" name="price" placeholder="Price" ngModel required ><br>
+
+    <textarea name="descr" id="" cols="30" rows="10" ngModel placeholder="Vehicle Description" required></textarea><br>
+
+    <input type="file" name="image" (change)="onFileChange($event)" required><br>
+
+    <button type="submit" class="btn-new">Add New Vehicle</button><br>
+
+    <p *ngIf="formError" class="error-message">
+           {{errorMessage}}
+    </p>
+</form>
+
+

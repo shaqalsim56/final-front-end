@@ -1,0 +1,54 @@
+body{
+    background-color: #E9F6FB;
+}
+
+.container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 70%;
+    padding-bottom: 25px;
+}
+
+
+.container a{
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.logo-class{
+    width: 10%;
+}
+
+.logo-class img{
+    width: 100%;
+}
+
+.nav-links{
+    width: 30%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.nav-links a{
+    color: inherit;
+}
+
+.login-register{
+    width: 20%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+
+.test-container{
+    border: 2px solid red;
+    display: flex;
+    justify-content: space-between;
+}
+
+.btn-login{
+    background-color: var(--main-green);
+}

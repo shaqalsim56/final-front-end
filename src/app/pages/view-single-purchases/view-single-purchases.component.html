@@ -1,0 +1,15 @@
+<app-admin-header></app-admin-header>
+<div class="featured-title">
+    <h1>View <span> Purchase</span></h1>
+</div>
+
+
+<div class="view-container">
+    <img src="assets/uploads/{{ purchase['img']}}" alt="" width="50%">
+    <h2>{{ purchase['year']}} {{ purchase['vehicle_make']}} {{ purchase['vehicle_model']}}</h2>
+    <p style="width: 50%; margin: auto; padding: 10px ;">{{purchase['descr']}}</p>
+    <h5>Name of Customer: {{ purchase['first_nm']}} {{ purchase['last_nm']}}</h5>
+    <h5>Purchase Date: {{ purchase['purchase_date'] | date}}</h5>
+    <h5>Price: {{ purchase['total_price'] | currency}}</h5>
+    <a routerLink="/view-all-purchases" class="btn-return">Return To All Purchases</a>
+</div>

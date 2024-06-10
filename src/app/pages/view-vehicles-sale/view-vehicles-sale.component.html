@@ -1,0 +1,20 @@
+<app-admin-header></app-admin-header>
+<div class="featured-title">
+    <h1>View <span>Vehicle For Sale</span></h1>
+</div>
+<div *ngIf="hasData" class="vehicle-container">
+        <img src="assets/uploads/{{vehicle['img']}}" alt="" width="60%"  style="border: 4px solid #FFB612;">
+
+        <div class="info-section">
+            <h1>{{vehicle['year']}} {{vehicle['vehicle_make']}} {{vehicle['vehicle_model']}}</h1>
+            <p><img src="assets/fileinterfacesymboloftextpapersheet_79740.svg" alt="" width="5%"> {{vehicle['descr']}}</p>
+            <p><img src="assets/car_door_icon_138811.png" alt="" width="5%"> {{vehicle['door']}}     Doors</p>
+            <p><img src="assets/fuelservice_89144.png" alt="" width="5%">      {{vehicle['fuel_type']}}</p>
+            <p><img src="assets/dollar-symbol_icon-icons.com_73598.svg" alt="" width="5%">{{vehicle['price'] | currency}}</p>
+            <p><img src="assets/car_seat_icon_177219.svg" alt="" width="5%">   {{vehicle['seat_num']}} Seat</p>
+            <p><img src="assets/event-available_119182.svg" alt="" width="5%">   {{vehicle['status']}}</p>
+        </div>
+</div>
+<div style="background-color: #E9F6FB; padding: 20px;">
+<a routerLink="/manage-sales-cars" class="btn-return">Return To Vehicles</a>
+</div>

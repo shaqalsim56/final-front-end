@@ -1,0 +1,47 @@
+<app-admin-header></app-admin-header>
+<div class="featured-title">
+    <h1>Update <span>User</span></h1>
+</div>
+
+<form (ngSubmit)="updateUser(updateForm)" #updateForm="ngForm" class="formClass">
+    <div class="form-group">
+        <label for="first_nm">First Name:</label>
+        <input type="text" id="first_nm" name="first_nm" placeholder="Enter The First Name" [(ngModel)]="user.first_nm">
+    </div>
+
+    <div class="form-group">
+        <label for="last_nm">Last Name: </label>
+        <input type="text" id="last_nm" name="last_nm" placeholder="Enter The Last Name" [(ngModel)]="user.last_nm">
+    </div>
+
+    <div class="form-group">
+        <label for="email">Email: </label>
+        <input type="text" id="email" name="email" placeholder="Enter New Email" [(ngModel)]="user.email">
+    </div>
+
+    <div class="form-group">
+        <label for="password">Password: </label>
+        <input type="password" id="password" name="password" placeholder="Enter New Password" [(ngModel)]="user.password">
+    </div>
+
+    <div class="form-group">
+        <label for="level">Access Level: :</label>
+        <select id="level" name="level" [(ngModel)]="user.level">
+            <option value="">Select The Access Level</option>
+            <option value="ADMIN">ADMIN</option>
+            <option value="USER">USER</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label for="status">User's Status:</label>
+        <select id="status" name="status" [(ngModel)]="user.status">
+            <option value="">Select The User's Status</option>
+            <option value="Active">Active</option>
+            <option value="Inactive">Inactive</option>
+        </select>
+    </div>
+
+    <button type="submit" class="btn-update">Update User</button>
+    <a routerLink="/all-users" class="btn-return">Return To Users</a>
+</form>

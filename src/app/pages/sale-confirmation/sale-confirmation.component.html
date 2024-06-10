@@ -1,0 +1,21 @@
+<app-user-header></app-user-header>
+<body>
+    
+
+<div *ngIf="isLoading">Loading...</div>
+<div *ngIf="isError">{{ errorMessage }}</div>
+<div *ngIf="purchase">
+
+    <div class="featured-title">
+        <h1>Congratulations, <span> {{purchase.first_nm}}</span>. Your Purchase is Confirmed!</h1>
+    </div>
+     
+ <div class="details-container">
+<img src="assets/uploads/{{purchase.img}}" alt="" width="50%">
+<p><b>Purchase Date:</b> {{ purchase.purchase_date | date}}</p>
+<p><b>Price:</b> {{ purchase.total_price | currency }}</p>
+
+<a routerLink="/logged-in" class="btn-home">Return Home</a>
+</div> 
+</div>
+</body>

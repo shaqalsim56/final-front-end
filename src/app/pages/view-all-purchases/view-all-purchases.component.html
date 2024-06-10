@@ -1,0 +1,40 @@
+<app-admin-header></app-admin-header>
+<div class="featured-title">
+    <h1>View<span> Purchases</span></h1>
+</div>
+
+<div *ngIf="!hasData" class="error-section">
+    No Purchases Made
+</div>
+
+<div *ngIf="hasData" style="background-color: #E9F6FB;">
+<table>
+    <tr class="table-title">
+        <td>Purchase ID</td>
+        <td>Name of Customer</td>
+        <td>Vehicle</td>
+        <td>Purchase Date</td>
+        <td>Totl Price</td>
+        <td>View</td>
+    </tr>
+
+    <tr *ngFor="let purchase of purchases | paginate: { itemsPerPage: itemsPerPage, currentPage: p}">
+    <td>{{purchase['id']}} </td>
+    <td>{{purchase['first_nm']}} {{purchase['last_nm']}}</td>
+    <td>{{purchase['vehicle_make']}} {{purchase['vehicle_model']}}</td>
+    <td>{{purchase['purchase_date'] | date}} </td>
+    <td>{{purchase['total_price'] | currency}} </td>
+    <td class="actions">
+        <a routerLink="/view-single-purchase/{{purchase['id']}}" class="btn btn-outline-info">View Purchase</a>
+    </td>
+    </tr>
+</table>
+
+<div class="pagination">
+    <pagination-controls (pageChange)="p = $event"></pagination-controls>
+</div>
+</div>
+
+<div style="background-color: #E9F6FB; padding: 60px;">
+    <a routerLink="/admin-dashboard" class="btn-return">Return To Dashboard</a>
+</div>

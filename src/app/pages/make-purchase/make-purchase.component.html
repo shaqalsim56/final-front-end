@@ -1,0 +1,31 @@
+<app-user-header></app-user-header>
+<body>
+<div class="featured-title">
+    <h1 >Complete <span>Purchase</span></h1>
+</div>
+
+<form (ngSubmit)="makePurchase(purchaseForm)" class="confirmation" #purchaseForm="ngForm">
+    <img src="assets/uploads/{{vehicle['img']}}" alt="">
+
+    <h1>{{vehicle['year']}} {{vehicle['vehicle_make']}} {{vehicle['vehicle_model']}}</h1>
+
+    <h3>{{vehicle['price'] | currency}}</h3>
+
+    <p>{{vehicle['descr']}}</p>
+
+    <input type="text" name="user_id" [ngModel]="currentUser?.id" hidden>
+
+    <input type="text" name="vehicle_id"  [ngModel]="vehicle?.id" hidden>
+
+    <input type="text" name="price"  [ngModel]="vehicle?.price" hidden>
+
+    <button type="submit" class="btn-book">Make Purchase</button>
+</form>
+
+<div style="background-color: #E9F6FB; padding: 10px;">
+<button onclick="history.back()" class="btn-return">Back</button>
+</div>
+
+</body>
+
+<app-footer></app-footer>

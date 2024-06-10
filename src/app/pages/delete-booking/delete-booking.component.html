@@ -1,0 +1,18 @@
+<app-admin-header></app-admin-header>
+<div class="featured-title">
+    <h1>Cancel <span> Booking</span></h1>
+</div>
+
+
+<div class="delete-container">
+    <img src="assets/uploads/{{booking['img']}}" alt="" width="50%">
+    <h2>{{booking['year']}} {{booking['vehicle_make']}} {{booking['vehicle_model']}}</h2>
+    <p style="width: 50%; margin: auto; padding: 10px ;">{{booking['descr']}}</p>
+    <h5>Name of Customer: {{booking['first_nm']}} {{booking['last_nm']}}</h5>
+    <h5>Current Rent Date: {{booking['rent_date'] | date}}</h5>
+    <h5>Current Return Date: {{booking['return_date']  | date}}</h5>
+    <h5>Total Price: {{booking['total_price']  | currency}}</h5>
+    <button class="btn btn-outline-danger"(click)="deleteBooking()">Cancel Booking</button>
+    <a routerLink="/all-bookings" class="btn-return">Return To All Bookings</a>
+</div>
+

@@ -1,0 +1,110 @@
+.title{
+    background-color: #FFB612;
+    padding: 2px;
+    margin-top: 10px;
+}
+
+.confirmation{
+    border: 2px solid yellowgreen;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.confirmation img{
+    width: 500px;
+    height: 330px;
+}
+
+.form-group {
+    margin-bottom: 5px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: bold;
+}
+
+input{
+    width: 15%;
+    margin-top: 15px;
+    padding: 5px;
+    border-radius: 20px;
+    border: 2px solid #000;
+    text-align: center;
+}
+
+.btn-book{
+    margin: auto;
+    text-align: center;
+    margin-top: 15px;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+    border-radius: 20px;
+    background-color: #006787;
+    color: #E9F6FB;
+    width: 20%;
+    border: none;
+    transition: all 0.5s;
+}
+
+.btn-book:hover{
+    background-color: #FFB612;
+    color: #000;
+}
+
+.featured-title{
+    text-align: center;
+    font-size: 60px;
+    font-weight: bold;
+    background-color: #E9F6FB;
+    padding: 20px;
+}
+
+.featured-title h1{
+    font-size: 50px;
+    font-weight: bold;
+}
+
+
+span{
+    color: #006787;
+}
+
+.details-container{
+    background-color: #E9F6FB;
+    text-align: center;
+    padding-bottom: 15px;
+}
+
+.details-container img{
+    border: 3px solid #FFB612;
+}
+
+.details-container p{
+    font-size: 25px;
+    margin-top: 10px;
+}
+
+.btn-home{
+    margin: auto;
+    text-align: center;
+    margin-top: 15px;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+    border-radius: 20px;
+    background-color: #006787;
+    color: #E9F6FB;
+    width: 20%;
+    border: none;
+    transition: all 0.5s;
+    text-decoration: none;
+}
+
+.btn-home:hover{
+    background-color: #FFB612;
+    color: #000;
+}

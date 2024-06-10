@@ -1,0 +1,96 @@
+
+<app-no-login-header></app-no-login-header>
+<body>
+    <div class="title-image">
+        <h1>The Easiest And Fastest Way To <span> Rent  & Purchase</span> Your Car</h1>
+        <img src="assets/audi-home.png" alt="" width="30%">
+    </div>
+    <img src="assets/header-curve.svg" alt="" class="curve">
+
+    <h1 class="featured-title">Featured <span>Vehicles For Rent</span></h1>
+
+    <div class="card-section">
+        <div class="card" *ngFor="let vehicle of vehicles  | paginate: { itemsPerPage: itemsPerPage, currentPage: p}">
+            <img src="assets/uploads/{{vehicle['img']}}" alt="" id="vehicle">
+            <h3>{{vehicle['vehicle_make']}} {{vehicle['vehicle_model']}}</h3>
+{{vehicle['vehicle_m']}}
+            <div class="info-section" id="icon">
+                <div>
+                    <img src="assets/car_seat_icon_177219.svg" alt=""> {{vehicle['seat_num']}}
+                </div>
+
+                <div id="icon">
+                    <img src="assets/car_door_icon_138811.png" alt=""> {{vehicle['door']}}
+                </div>
+             
+          
+                <div id="icon">
+                    <img src="assets/fuelservice_89144.png" alt=""> {{vehicle['fuel_type']}}
+                </div>
+
+            </div>
+            <div>
+                <h5>{{vehicle['year']}}</h5>
+            </div>
+
+            <div class="info-section" id="icon">
+                <div>
+                    <h3>JMD {{vehicle['price'] | currency}}</h3>
+                </div>
+
+                <a routerLink="view-rental/{{vehicle['id']}}" class="btn-rent">Book Rental</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="card-section">
+        <div class="card" *ngFor="let vehicle of vehicles.slice(3)| paginate: { itemsPerPage: itemsPerPage, currentPage: p}">
+            <img src="assets/uploads/{{vehicle['img']}}" alt="" id="vehicle">
+            <h3>{{vehicle['vehicle_make']}} {{vehicle['vehicle_model']}}</h3>
+
+            <div class="info-section" id="icon">
+                <div>
+                    <img src="assets/car_seat_icon_177219.svg" alt=""> {{vehicle['seat_num']}}
+                </div>
+
+                <div id="icon">
+                    <img src="assets/car_door_icon_138811.png" alt=""> {{vehicle['door']}}
+                </div>
+             
+          
+                <div id="icon">
+                    <img src="assets/fuelservice_89144.png" alt=""> {{vehicle['fuel_type']}}
+                </div>
+
+            </div>
+            <div>
+                <h5>{{vehicle['year']}}</h5>
+            </div>
+
+            <div class="info-section" id="icon">
+                <div>
+                    <h3>JMD {{vehicle['price'] | currency}}</h3>
+                </div>
+
+                 <a routerLink="view-rental/{{vehicle['id']}}" class="btn-rent">Book Rental</a>
+            </div>
+        </div>
+    </div>
+
+    <a routerLink="/see-all-rentals" class="btn-view" >See All</a>
+
+    <h1 class="featured-title">Seeking To Purchase? </h1>
+
+    <a routerLink="/see-all-selling" class="btn-explore" >Explore Car Mart</a>
+
+
+
+</body>
+
+<app-footer></app-footer>
+
+
+
+
+
+

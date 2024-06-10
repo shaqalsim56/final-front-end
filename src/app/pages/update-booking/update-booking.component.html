@@ -1,0 +1,28 @@
+<app-admin-header></app-admin-header>
+<div class="featured-title">
+    <h1>Update <span> Booking Date</span></h1>
+</div>
+
+<div class="update-container">
+<img src="assets/uploads/{{booking['img']}}" alt="" width="50%">
+<h2>{{booking['year']}} {{booking['vehicle_make']}} {{booking['vehicle_model']}}</h2>
+<h5>Name of Customer: {{booking['first_nm']}} {{booking['last_nm']}}</h5>
+<p hidden>{{booking['price']}}</p>
+<h5>Total Price: {{booking['total_price']  | currency}}</h5>
+<h5>Current Rent Date: {{booking['rent_date'] | date}}</h5>
+<h5>Current Return Date: {{booking['return_date'] | date}}</h5>
+<form #updateForm="ngForm" (ngSubmit)="updateBooking(updateForm)">
+    <div>
+      <label for="rent_date">New Rent Date:</label>
+      <input type="date" name="rent_date" id=start required (change)="onStartChange($event)" #startInput ngModel >
+    </div>
+    <div>
+      <label for="return_date">New Return Date:</label>
+      <input type="date" id="return_date" name="return_date" id=end required (change)="onEndChange($event)" #endInput ngModel>
+    </div>
+    <button type="submit" class="btn-update">Update Booking</button>
+  </form>
+
+  <a routerLink="/all-bookings" class="btn-return">Return To All Bookings</a>
+</div>
+

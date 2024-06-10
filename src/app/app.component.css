@@ -1,0 +1,13 @@
+:root {
+    --gold: #FFB612;
+    --green: #006787;
+    --black: #101820;
+    --light-blue: #E9F6FB;
+}
+
+
+
+.container{
+    border: 2px solid red;
+    background-color: #E9F6FB;
+}

@@ -1,0 +1,87 @@
+<app-admin-header></app-admin-header>
+<div class="featured-title">
+    <h1>Update <span> Vehicle For Sale</span></h1>
+</div>
+
+<div class="image-container">
+    <img src="assets/uploads/{{vehicle['img']}}" alt="" width="50%" style="border: 4px solid #FFB612;">
+</div>
+
+<form (ngSubmit)="updateVehicleSale(updateForm)" #updateForm="ngForm" class="formClass">
+    <div class="form-group">
+        <label for="vehicleModel">Vehicle Model:</label>
+        <input type="text" id="vehicleModel" name="vehicle_model" placeholder="Enter The Vehicle's Model" [(ngModel)]="vehicle.vehicle_model">
+    </div>
+
+    <div class="form-group">
+        <label for="vehicleMake">Vehicle Make:</label>
+        <input type="text" id="vehicleMake" name="vehicle_make" placeholder="Enter The Vehicle's Make" [(ngModel)]="vehicle.vehicle_make">
+    </div>
+
+    <div class="form-group">
+        <label for="seatNum">Number of Seats:</label>
+        <select id="seatNum" name="seat_num" [(ngModel)]="vehicle.seat_num">
+            <option value="">Select Number of Seats</option>
+            <option value="2">2</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label for="manufactureYear">Manufacture Year:</label>
+        <select id="manufactureYear" name="year" [(ngModel)]="vehicle.year">
+            <option value="">Select The Vehicle's Manufacture Year</option>
+            <option *ngFor="let year of years" [value]="year">{{ year }}</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label for="numDoors">Number of Doors:</label>
+        <select id="numDoors" name="door" [(ngModel)]="vehicle.door">
+            <option value="">Select Number of Doors</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label for="fuelType">Fuel Type:</label>
+        <select id="fuelType" name="fuel_type" [(ngModel)]="vehicle.fuel_type">
+            <option value="">Select Fuel Type</option>
+            <option value="Petrol">Petrol</option>
+            <option value="Diesel">Diesel</option>
+            <option value="Electric">Electric</option>
+            <option value="Hybrid">Hybrid</option>
+            <option value="CNG">CNG</option>
+            <option value="Petrol/Diesel/Electric">Petrol/Diesel/Electric</option>
+            <option value="Petrol/Diesel">Petrol/Diesel</option>
+            <option value="Petrol/Electric">Petrol/Electric</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label for="price">Price:</label>
+        <input type="number" id="price" name="price" placeholder="Price" [(ngModel)]="vehicle.price">
+    </div>
+
+    <div class="form-group">
+        <label for="description">Vehicle Description:</label>
+        <textarea id="description" name="descr" cols="30" rows="10" [(ngModel)]="vehicle.descr" placeholder="Vehicle Description"></textarea>
+    </div>
+
+    <div class="form-group">
+        <label for="image">Image:</label>
+        <input type="file" id="image" name="image" (change)="onFileChange($event)" [(ngModel)]="vehicle.img">
+    </div>
+
+
+    <button type="submit" class="btn-update">Update Vehicle</button>
+    <a routerLink="/manage-sales-cars" class="btn-return">Return To Vehicles</a>
+</form>
+

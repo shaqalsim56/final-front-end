@@ -1,0 +1,45 @@
+<app-admin-header></app-admin-header>
+<div class="featured-title">
+    <h1>Manage <span> Bookings</span></h1>
+</div>
+
+<div *ngIf="!hasData" class="error-section">
+    No Bookings Found 
+</div>
+
+
+<div *ngIf="hasData" style="background-color: #E9F6FB;">
+    <table>
+        <tr class="table-title">
+            <td>ID</td>
+            <td>Name</td>
+            <td>Vehicle</td>
+            <td>Rent Date</td>
+            <td>Return Date</td>
+            <td>Total Price</td>
+            <td>Actions</td>
+        </tr>
+    
+        <tr *ngFor="let booking of bookings  | paginate: { itemsPerPage: itemsPerPage, currentPage: p}">
+            <td>{{booking['id']}}</td>
+            <td>{{booking['first_nm']}}  {{booking['last_nm']}}</td>
+            <td>{{booking['vehicle_make']}} {{booking['vehicle_model']}}</td>
+            <td>{{booking['rent_date'] | date}}</td>
+            <td>{{booking['return_date'] | date}}</td>
+            <td>{{booking['total_price'] | currency}}</td>
+            <td class="actions">
+                <a routerLink="/view-booking/{{ booking['id'] }}" class="btn btn-outline-info">View booking</a>
+                <a routerLink="/update-booking/{{booking['id']}}" class="btn btn-outline-info">Update booking</a>
+                <a routerLink="/delete-booking/{{booking['id']}}" class="btn btn-outline-info">Cancel booking</a>
+            </td>
+        </tr>
+    </table>
+    
+    <div class="pagination">
+        <pagination-controls (pageChange)="p = $event"></pagination-controls>
+    </div>
+</div>
+
+<div style="background-color: #E9F6FB; padding: 60px;">
+    <a routerLink="/admin-dashboard" class="btn-return">Return To Dashboard</a>
+</div>

@@ -1,0 +1,131 @@
+
+body{
+    background-color: #E9F6FB;
+}
+.title-image{
+    padding: 15px;
+    width: 70%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.title-image h1{
+    width: 35%;
+    font-weight: 700;
+}
+
+.title-image span{
+    color: #006787;
+}
+
+.curve{
+    margin-top: -9%;
+    width: 100%;
+    max-width: 100%;
+    display: block; 
+    overflow: hidden; 
+}
+
+span{
+    color: #006787;
+}
+
+.featured-title{
+    text-align: center;
+    font-size: 60px;
+    font-weight: bold;
+}
+
+.card{
+    border: 3px solid #000;
+    width: 30%;
+    padding: 10px;
+    text-align: center;
+    border-radius: 20px;
+}
+
+#vehicle{
+    height: 250px;
+    width: 420px;
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+    
+}
+.card-section{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+}
+.info-section{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#icon img{
+    width: 30px;
+    height: 30px;
+}
+
+.sub-section{
+    align-items: center;
+}
+
+.btn-view{
+    margin: auto;
+    text-align: center;
+    margin-top: 15px;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+    border-radius: 20px;
+    background-color: #006787;
+    color: #E9F6FB;
+    width: 20%;
+    border: none;
+    transition: all 0.5s;
+    text-decoration: none;
+}
+
+.btn-view:hover{
+    background-color: #FFB612;
+    color: #000;
+}
+
+.btn-explore{
+    margin: auto;
+    text-align: center;
+    margin-top: 15px;
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+    border-radius: 20px;
+    background-color: #006787;
+    color: #E9F6FB;
+    width: 40%;
+    border: none;
+    transition: all 0.5s;
+    text-decoration: none;
+    font-size: 25px;
+    font-weight: 700;
+}
+
+.btn-explore:hover{
+    background-color: #FFB612;
+    color: #000;
+}
+.btn-rent{
+    text-align: center;
+    background-color: #91D0E8;
+    color: #E9F6FB;
+    padding: 7px;
+    text-decoration: none;
+    border-radius: 20px;
+    transition: all 0.5s;
+}
+.btn-rent:hover{
+    background-color: #FFB612;
+    color: #000;
+}
